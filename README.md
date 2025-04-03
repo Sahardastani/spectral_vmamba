@@ -1,3 +1,3 @@
-# spectral_vmamba
+# [CVPR 2025] spectral_vmamba
 
 Coming soon...
