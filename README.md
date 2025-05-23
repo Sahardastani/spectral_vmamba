@@ -7,6 +7,9 @@ Rotation-Invariant Visual Representation Learning
 
 </div>
 
+Official Implementation of Spectral VMamba:
+[![arXiv](https://img.shields.io/badge/arXiv-2306.08832-B31B1B.svg)](https://arxiv.org/pdf/2503.06369)
+
 ## Table of Contents
 - [1. Abstract](#1-abstract)
 - [2. Overview](#2-overview)
