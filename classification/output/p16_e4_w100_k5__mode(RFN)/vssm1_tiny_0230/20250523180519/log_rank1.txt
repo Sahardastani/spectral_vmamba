@@ -1,0 +1,129 @@
+[2025-05-23 18:05:20 vssm1_tiny_0230] (main.py 447): INFO AMP_ENABLE: true
+AMP_OPT_LEVEL: ''
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /data/shared/mini-imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  MASK_PATCH_SIZE: 32
+  MASK_RATIO: 0.6
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+ENABLE_AMP: false
+EVAL_MODE: false
+FUSED_LAYERNORM: false
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  MMCKPT: false
+  NAME: vssm1_tiny_0230
+  NUM_CLASSES: 100
+  PRETRAINED: ''
+  RESUME: ''
+  TYPE: vssm
+  VSSM:
+    ALPHA: 100
+    AMBIGUITY: false
+    BINARY: false
+    CSMS6S_MODE: NORMAL
+    DEPTHS:
+    - 2
+    - 2
+    - 5
+    - 2
+    DIMENSION:
+    - INCREASE
+    DIVISION_RATE: 4
+    DOWNSAMPLE: v3
+    EMBED_DIM: 256
+    GMLP: false
+    IN_CHANS: 3
+    KNN: 5
+    K_GROUP: 8
+    MLP_ACT_LAYER: gelu
+    MLP_DROP_RATE: 0.0
+    MLP_RATIO: 4.0
+    MODE: RFN
+    NORM_LAYER: ln2d
+    PATCHEMBED: v2
+    PATCH_NORM: true
+    PATCH_SIZE: 16
+    POSEMBED: false
+    SSM_ACT_LAYER: silu
+    SSM_CONV: 1
+    SSM_CONV_BIAS: false
+    SSM_DROP_RATE: 0.0
+    SSM_DT_RANK: auto
+    SSM_D_STATE: 1
+    SSM_FORWARDTYPE: v05_noz
+    SSM_INIT: v0
+    SSM_RANK_RATIO: 2.0
+    SSM_RATIO: 2.0
+    TOP_K: 4
+OUTPUT: output/p16_e4_w100_k5__mode(RFN)/vssm1_tiny_0230/20250523180519
+PRINT_FREQ: 10
+SAVE_FREQ: 1
+SEED: 0
+TAG: '20250523180519'
+TEST:
+  CROP: true
+  SEQUENTIAL: false
+  SHUFFLE: false
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 1
+  AUTO_RESUME: true
+  BASE_LR: 0.00025
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LAYER_DECAY: 1.0
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    GAMMA: 0.1
+    MULTISTEPS: []
+    NAME: cosine
+    WARMUP_PREFIX: true
+  MIN_LR: 2.5e-06
+  MOE:
+    SAVE_MASTER: false
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 2.5e-07
+  WEIGHT_DECAY: 0.05
+TRAINCOST_MODE: false
+
+[2025-05-23 18:05:20 vssm1_tiny_0230] (main.py 448): INFO {"cfg": "configs/vssm/vmambav2_tiny_224.yaml", "opts": null, "batch_size": 128, "data_path": "/data/shared/mini-imagenet", "zip": false, "cache_mode": "part", "pretrained": null, "resume": null, "accumulation_steps": null, "use_checkpoint": false, "disable_amp": false, "output": "output", "tag": "20250523180519", "eval": false, "throughput": false, "fused_layernorm": false, "optim": null, "model_ema": true, "model_ema_decay": 0.9999, "model_ema_force_cpu": false, "memory_limit_rate": -1, "top_k": 2, "knn": 4}
+[2025-05-23 18:05:20 vssm1_tiny_0230] (main.py 128): INFO Creating model:vssm/vssm1_tiny_0230
+[2025-05-23 18:05:23 vssm1_tiny_0230] (optimizer.py 18): INFO ==============> building optimizer adamw....................
+[2025-05-23 18:05:23 vssm1_tiny_0230] (optimizer.py 26): INFO No weight decay list: ['layers.0.blocks.0.norm.weight', 'layers.0.blocks.0.norm.bias', 'layers.0.blocks.0.op.Ds', 'layers.0.blocks.0.op.out_norm.weight', 'layers.0.blocks.0.op.out_norm.bias', 'layers.0.blocks.0.norm2.weight', 'layers.0.blocks.0.norm2.bias', 'layers.0.blocks.0.mlp.fc1.bias', 'layers.0.blocks.0.mlp.fc2.bias', 'layers.0.blocks.1.norm.weight', 'layers.0.blocks.1.norm.bias', 'layers.0.blocks.1.op.Ds', 'layers.0.blocks.1.op.out_norm.weight', 'layers.0.blocks.1.op.out_norm.bias', 'layers.0.blocks.1.norm2.weight', 'layers.0.blocks.1.norm2.bias', 'layers.0.blocks.1.mlp.fc1.bias', 'layers.0.blocks.1.mlp.fc2.bias', 'layers.0.downsample.1.bias', 'layers.0.downsample.4.weight', 'layers.0.downsample.4.bias', 'layers.1.blocks.0.norm.weight', 'layers.1.blocks.0.norm.bias', 'layers.1.blocks.0.op.Ds', 'layers.1.blocks.0.op.out_norm.weight', 'layers.1.blocks.0.op.out_norm.bias', 'layers.1.blocks.0.norm2.weight', 'layers.1.blocks.0.norm2.bias', 'layers.1.blocks.0.mlp.fc1.bias', 'layers.1.blocks.0.mlp.fc2.bias', 'layers.1.blocks.1.norm.weight', 'layers.1.blocks.1.norm.bias', 'layers.1.blocks.1.op.Ds', 'layers.1.blocks.1.op.out_norm.weight', 'layers.1.blocks.1.op.out_norm.bias', 'layers.1.blocks.1.norm2.weight', 'layers.1.blocks.1.norm2.bias', 'layers.1.blocks.1.mlp.fc1.bias', 'layers.1.blocks.1.mlp.fc2.bias', 'layers.1.downsample.1.bias', 'layers.1.downsample.4.weight', 'layers.1.downsample.4.bias', 'layers.2.blocks.0.norm.weight', 'layers.2.blocks.0.norm.bias', 'layers.2.blocks.0.op.Ds', 'layers.2.blocks.0.op.out_norm.weight', 'layers.2.blocks.0.op.out_norm.bias', 'layers.2.blocks.0.norm2.weight', 'layers.2.blocks.0.norm2.bias', 'layers.2.blocks.0.mlp.fc1.bias', 'layers.2.blocks.0.mlp.fc2.bias', 'layers.2.blocks.1.norm.weight', 'layers.2.blocks.1.norm.bias', 'layers.2.blocks.1.op.Ds', 'layers.2.blocks.1.op.out_norm.weight', 'layers.2.blocks.1.op.out_norm.bias', 'layers.2.blocks.1.norm2.weight', 'layers.2.blocks.1.norm2.bias', 'layers.2.blocks.1.mlp.fc1.bias', 'layers.2.blocks.1.mlp.fc2.bias', 'layers.2.blocks.2.norm.weight', 'layers.2.blocks.2.norm.bias', 'layers.2.blocks.2.op.Ds', 'layers.2.blocks.2.op.out_norm.weight', 'layers.2.blocks.2.op.out_norm.bias', 'layers.2.blocks.2.norm2.weight', 'layers.2.blocks.2.norm2.bias', 'layers.2.blocks.2.mlp.fc1.bias', 'layers.2.blocks.2.mlp.fc2.bias', 'layers.2.blocks.3.norm.weight', 'layers.2.blocks.3.norm.bias', 'layers.2.blocks.3.op.Ds', 'layers.2.blocks.3.op.out_norm.weight', 'layers.2.blocks.3.op.out_norm.bias', 'layers.2.blocks.3.norm2.weight', 'layers.2.blocks.3.norm2.bias', 'layers.2.blocks.3.mlp.fc1.bias', 'layers.2.blocks.3.mlp.fc2.bias', 'layers.2.blocks.4.norm.weight', 'layers.2.blocks.4.norm.bias', 'layers.2.blocks.4.op.Ds', 'layers.2.blocks.4.op.out_norm.weight', 'layers.2.blocks.4.op.out_norm.bias', 'layers.2.blocks.4.norm2.weight', 'layers.2.blocks.4.norm2.bias', 'layers.2.blocks.4.mlp.fc1.bias', 'layers.2.blocks.4.mlp.fc2.bias', 'layers.2.downsample.1.bias', 'layers.2.downsample.4.weight', 'layers.2.downsample.4.bias', 'layers.3.blocks.0.norm.weight', 'layers.3.blocks.0.norm.bias', 'layers.3.blocks.0.op.Ds', 'layers.3.blocks.0.op.out_norm.weight', 'layers.3.blocks.0.op.out_norm.bias', 'layers.3.blocks.0.norm2.weight', 'layers.3.blocks.0.norm2.bias', 'layers.3.blocks.0.mlp.fc1.bias', 'layers.3.blocks.0.mlp.fc2.bias', 'layers.3.blocks.1.norm.weight', 'layers.3.blocks.1.norm.bias', 'layers.3.blocks.1.op.Ds', 'layers.3.blocks.1.op.out_norm.weight', 'layers.3.blocks.1.op.out_norm.bias', 'layers.3.blocks.1.norm2.weight', 'layers.3.blocks.1.norm2.bias', 'layers.3.blocks.1.mlp.fc1.bias', 'layers.3.blocks.1.mlp.fc2.bias', 'classifier.norm.weight', 'classifier.norm.bias', 'classifier.head.bias']
+[2025-05-23 18:05:23 vssm1_tiny_0230] (main.py 177): INFO no checkpoint found in output/p16_e4_w100_k5__mode(RFN)/vssm1_tiny_0230/20250523180519, ignoring auto resume
+[2025-05-23 18:05:23 vssm1_tiny_0230] (main.py 210): INFO Start training
+[2025-05-23 18:05:56 vssm1_tiny_0230] (main.py 299): INFO Train: [0/300][0/195]	eta 1:46:22 lr 0.000000	 wd 0.0500	time 32.7306 (32.7306)	data time 26.2275 (26.2275)	model time 0.0000 (0.0000)	loss 7.1280 (7.1280)	grad_norm 7.2469 (7.2469)	loss_scale 65536.0000 (65536.0000)	mem 41350MB
+[2025-05-23 18:06:11 vssm1_tiny_0230] (main.py 299): INFO Train: [0/300][10/195]	eta 0:13:25 lr 0.000001	 wd 0.0500	time 1.6321 (4.3514)	data time 0.0007 (2.3849)	model time 0.0000 (0.0000)	loss 7.1313 (7.0904)	grad_norm 6.8703 (6.9436)	loss_scale 65536.0000 (65536.0000)	mem 12650MB

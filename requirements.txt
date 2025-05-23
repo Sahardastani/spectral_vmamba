@@ -1,0 +1,11 @@
+packaging
+triton
+timm==0.4.12
+pytest 
+chardet 
+yacs 
+termcolor
+submitit 
+tensorboardX
+fvcore
+seaborn
