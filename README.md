@@ -40,12 +40,12 @@ To address these limitations, we introduce Spectral VMamba, a novel approach tha
 ### **Classification on mini-ImageNet**
 | name | pretrain | resolution |acc@1 | FLOPs | configs/logs/ckpts |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| VMamba-T[`s1l8`] | mini-ImageNet | 224x224 | 86.25 | 4.9G | [config](classification/configs/vssm/vmambav2v_tiny_224.yaml) |
-| VMamba-S[`s2l15`] | mini-ImageNet | 224x224 | 86.48 | 8.7G| [config](classification/configs/vssm/vmambav2_small_224.yaml) |
-| VMamba-B[`s2l15`] | mini-ImageNet | 224x224 | 87.17 | 8.7G | [config](classification/configs/vssm/vmambav2_base_224.yaml) |
-| Ours-T[`s1l8`] | mini-ImageNet | 224x224 | 87.86 | 3.9G | [config](classification/configs/vssm/vmambav2v_tiny_224.yaml) |
-| Ours-S[`s2l15`] | mini-ImageNet | 224x224 | 88.09 | 6.3G | [config](classification/configs/vssm/vmambav2_small_224.yaml) |
-| Ours-B[`s2l15`] | mini-ImageNet | 224x224 | 88.17 | 6.3G | [config](classification/configs/vssm/vmambav2_base_224.yaml) |
+| VMamba-T[`s1l8`] | mini-ImageNet | 224x224 | 86.25 | 4.9G |  |
+| VMamba-S[`s2l15`] | mini-ImageNet | 224x224 | 86.48 | 8.7G|  |
+| VMamba-B[`s2l15`] | mini-ImageNet | 224x224 | 87.17 | 8.7G |  |
+| Ours-T[`s1l8`] | mini-ImageNet | 224x224 | 87.86 | 3.9G | [config](classification/configs/vssm/spectral_vmamba_tiny_224.yaml) |
+| Ours-S[`s2l15`] | mini-ImageNet | 224x224 | 88.09 | 6.3G | [config](classification/configs/vssm/spectral_vmamba_small_224.yaml) |
+| Ours-B[`s2l15`] | mini-ImageNet | 224x224 | 88.17 | 6.3G | [config](classification/configs/vssm/spectral_vmamba_base_224.yaml) |
 
 ## 4. Getting Started
 

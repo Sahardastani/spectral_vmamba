@@ -7,7 +7,7 @@ python -m torch.distributed.launch \
     --master_addr="127.0.0.1" \
     --master_port=21495 \
     main.py \
-    --cfg configs/vssm/vmambav2_tiny_224.yaml \
+    --cfg configs/vssm/vmamba_tiny_224.yaml \
     --batch-size 128 \
     --data-path /data/shared/mini-imagenet \
     --output output

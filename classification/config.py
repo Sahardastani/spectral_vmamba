@@ -295,14 +295,8 @@ def update_config(config, args):
         config.TRAIN.OPTIMIZER.NAME = args.optim
 
     # output folder
-    if config.MODEL.VSSM.BINARY == True:
-        config.OUTPUT = os.path.join(config.OUTPUT, 
-                                     f"p{config.MODEL.VSSM.PATCH_SIZE}_e{config.MODEL.VSSM.TOP_K}_binary_k{config.MODEL.VSSM.KNN}__mode({config.MODEL.VSSM.MODE})", 
-                                     config.MODEL.NAME, config.TAG)
-    else:
-        config.OUTPUT = os.path.join(config.OUTPUT, 
-                                     f"p{config.MODEL.VSSM.PATCH_SIZE}_e{config.MODEL.VSSM.TOP_K}_w{config.MODEL.VSSM.ALPHA}_k{config.MODEL.VSSM.KNN}__mode({config.MODEL.VSSM.MODE})", 
-                                     config.MODEL.NAME, config.TAG)
+
+    config.OUTPUT = os.path.join(config.OUTPUT, f"mode({config.MODEL.VSSM.MODE})", config.MODEL.NAME, config.TAG)
 
     config.freeze()
 
